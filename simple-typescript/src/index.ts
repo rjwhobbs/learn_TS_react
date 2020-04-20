@@ -6,9 +6,10 @@
 // import * as math from './mul';
 //Alias
 import multiply, {mulTwo as mTwo} from './mul'; 
-import { capIt } from './types';
+import { capIt, enumTest } from './types';
 
 console.log(capIt('this'));
+enumTest();
 
 const a = 21;
 const b = 2;

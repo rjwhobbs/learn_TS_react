@@ -7,3 +7,29 @@ function capIt(str) {
     }
 }
 exports.capIt = capIt;
+// Objects a re non-primitave therfore you can't assign primitive types to an object in TS
+// Non prim [], {}, new Map(),
+const myObj = [];
+//Void
+function log(str) {
+    console.log(str);
+}
+//Array
+let arrOne = ['z', 'x'];
+let arrTwo = ['z', 'x'];
+//Tuple, Array with fixed number of elements
+let tuple = ['bru', 42];
+//Enum
+var Color;
+(function (Color) {
+    Color[Color["Red"] = 3] = "Red";
+    Color[Color["Green"] = 4] = "Green";
+    Color["Blue"] = "blue"; // we can also assign strings as a 'key'
+})(Color || (Color = {}));
+exports.enumTest = () => {
+    console.log(Color.Red, Color.Blue, Color.Green);
+    console.log(Color[3]); // Accessing the value of an enum
+    // console.log(Color['blue']); //Does not work
+};
+let col = Color.Blue;
+//Any, anything

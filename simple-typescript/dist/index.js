@@ -10,6 +10,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mul_1 = require("./mul");
 const types_1 = require("./types");
 console.log(types_1.capIt('this'));
+types_1.enumTest();
 const a = 21;
 const b = 2;
 // console.log(math.default(a, b)); //Getting default export from namespace
