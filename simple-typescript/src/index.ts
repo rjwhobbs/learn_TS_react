@@ -18,7 +18,7 @@ const b = 2;
 // console.log(math.mulTwo(b));
 console.log(mTwo(91));
 
-function sumAll(...numbers: number[]): number {
+function sumAll(...numbers: number[]): number { // Using spread for multiple args
   return numbers.reduce((acc, cur) => {
     return acc + cur;
   }); // Not sure why the default value was here
