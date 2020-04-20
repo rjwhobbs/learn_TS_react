@@ -1,7 +1,8 @@
 "use strict";
 class Robot {
-    constructor(name) {
+    constructor(name, color) {
         this._name = name;
+        this._color = color;
     }
     static isColorAvai(color) {
         return Robot.availableColors.includes(color);
@@ -21,6 +22,9 @@ class Robot {
         }
         this._color = color;
     }
+    get color() {
+        return this._color;
+    }
     set name(value) {
         this._name = value;
     }
@@ -29,12 +33,14 @@ class Robot {
     }
 }
 Robot.availableColors = ['green', 'yellow'];
-const robot = new Robot('Joe');
+const robot = new Robot('Joe', 'green');
 robot.name = 'Mike';
 robot.askName();
+robot.color = 'black';
+console.log(robot.color); // throws error because color not available
 class FlyingRobot extends Robot {
-    constructor(name, jetpackSize) {
-        super(name); // Super refers to the constructor of the parent class
+    constructor(name, color, jetpackSize) {
+        super(name, color); // Super refers to the constructor of the parent class
         this.jetpackSize = jetpackSize;
     }
     move(distance) {
@@ -42,7 +48,7 @@ class FlyingRobot extends Robot {
         super.move(distance); // Calling parent class method
     }
 }
-const flyingRobot = new FlyingRobot('Tom', 42);
+const flyingRobot = new FlyingRobot('Tom', 'yellow', 42);
 flyingRobot.move(99);
 flyingRobot.name = "kevin";
 flyingRobot.askName();

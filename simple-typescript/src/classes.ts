@@ -1,13 +1,14 @@
 class Robot {
-  _color: string;
+  private _color: string; // This cannot be accessed by the child class
   private static availableColors = ['green', 'yellow'];
   static isColorAvai(color: string) {
     return Robot.availableColors.includes(color);
   }
   protected _name: string;
 
-  constructor(name: string) {
+  constructor(name: string, color: string) {
     this._name = name;
+    this._color = color;
   }
   // If we have a few props to define we can do that in the constructor args
   // constructor(protected name: string) {} // This has the same effect as the above
@@ -28,6 +29,10 @@ class Robot {
     this._color = color;
   }
 
+  get color() {
+    return this._color;
+  }
+
   set name(value: string) { // This method is called like this var.name = 'foo';
     this._name = value;
   }
@@ -37,15 +42,17 @@ class Robot {
   }
 }
 
-const robot = new Robot('Joe');
+const robot = new Robot('Joe', 'green');
 robot.name = 'Mike';
 robot.askName();
+robot.color = 'black';
+console.log(robot.color); // throws error because color not available
 
 class FlyingRobot extends Robot {
   private readonly jetpackSize: number; // Once the size is set inside the constructor we cannot change this value
 
-  constructor(name: string, jetpackSize: number) {
-    super(name); // Super refers to the constructor of the parent class
+  constructor(name: string, color: string,jetpackSize: number) {
+    super(name, color); // Super refers to the constructor of the parent class
     this.jetpackSize = jetpackSize;
   }
 
@@ -55,7 +62,7 @@ class FlyingRobot extends Robot {
   }
 }
 
-const flyingRobot = new FlyingRobot('Tom', 42);
+const flyingRobot = new FlyingRobot('Tom', 'yellow', 42);
 flyingRobot.move(99);
 flyingRobot.name = "kevin";
 flyingRobot.askName();
