@@ -12,3 +12,5 @@ const c = {};
 c.i = 99;
 c.j = 0;
 c.str = "test"; // No more error thanks to union type
+const sum = (a, b) => a + b;
+sum.someProp = 42;

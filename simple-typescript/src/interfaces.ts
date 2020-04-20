@@ -33,3 +33,13 @@ const c: C = {}
 c.i = 99;
 c.j = 0;
 c.str = "test" // No more error thanks to union type
+
+// Call Signature, function interface
+interface Sum {
+  (a: number, b: number): number; // The function args and return
+  someProp: number;
+}
+
+const sum: Sum = (a, b) => a + b;
+sum.someProp = 42;
+
