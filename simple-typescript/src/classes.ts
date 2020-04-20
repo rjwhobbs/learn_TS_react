@@ -1,6 +1,6 @@
 class Robot {
   _color: string;
-  static availableColors = ['green', 'yellow'];
+  private static availableColors = ['green', 'yellow'];
   static isColorAvai(color: string) {
     return Robot.availableColors.includes(color);
   }
