@@ -4,7 +4,7 @@ class Robot {
   static isColorAvai(color: string) {
     return Robot.availableColors.includes(color);
   }
-  protected _name: string;
+  protected _name: string; // Private but available to child classes
 
   constructor(name: string, color: string) {
     this._name = name;
@@ -51,7 +51,7 @@ console.log(robot.color); // throws error because color not available
 class FlyingRobot extends Robot {
   private readonly jetpackSize: number; // Once the size is set inside the constructor we cannot change this value
 
-  constructor(name: string, color: string,jetpackSize: number) {
+  constructor(name: string, color: string, jetpackSize: number) {
     super(name, color); // Super refers to the constructor of the parent class
     this.jetpackSize = jetpackSize;
   }
