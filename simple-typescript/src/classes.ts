@@ -18,7 +18,7 @@ const robot = new Robot('Joe');
 robot.askName();
 
 class FlyingRobot extends Robot {
-  jetpackSize: number;
+  private jetpackSize: number;
 
   constructor(name: string, jetpackSize: number) {
     super(name); // Super refers to the constructor of the parent class
