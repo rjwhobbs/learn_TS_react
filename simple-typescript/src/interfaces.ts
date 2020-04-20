@@ -14,8 +14,8 @@ let a: A = {
 let b: B = a;
 
 interface Profile {
-  name: string;
-  age: number;
+  readonly name: string; // Prop can't be modified
+  age?: number; // The '?' make s the property optional
 }
 
 let profile: Profile = {
