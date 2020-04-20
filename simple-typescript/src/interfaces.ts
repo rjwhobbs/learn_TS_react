@@ -43,3 +43,13 @@ interface Sum {
 const sum: Sum = (a, b) => a + b;
 sum.someProp = 42;
 
+// Extending interfaces
+interface Parent {
+  x: string;
+}
+
+interface Child extends Parent {
+
+}
+
+let child: Child = {x: 'test'};
