@@ -52,3 +52,4 @@ const flyingRobot = new FlyingRobot('Tom', 'yellow', 42);
 flyingRobot.move(99);
 flyingRobot.name = "kevin";
 flyingRobot.askName();
+// ts classes hve two sides, Static and instance

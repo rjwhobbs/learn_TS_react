@@ -19,6 +19,6 @@ console.log(mul_1.mulTwo(91));
 function sumAll(...numbers) {
     return numbers.reduce((acc, cur) => {
         return acc + cur;
-    }); // Not sure why the default value was here
+    }, 0); // Not sure why the default value was here, looks like incase no args where added
 }
-console.log(sumAll(11, 22, 33));
+console.log(sumAll());
