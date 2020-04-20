@@ -16,3 +16,9 @@ const b = 2;
 // console.log(math.default(a, b)); //Getting default export from namespace
 // console.log(math.mulTwo(b));
 console.log(mul_1.mulTwo(91));
+function sumAll(...numbers) {
+    return numbers.reduce((acc, cur) => {
+        return acc + cur;
+    }, 0);
+}
+console.log(sumAll(11, 22, 33));

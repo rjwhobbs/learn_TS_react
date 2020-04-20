@@ -17,3 +17,11 @@ const b = 2;
 // console.log(math.default(a, b)); //Getting default export from namespace
 // console.log(math.mulTwo(b));
 console.log(mTwo(91));
+
+function sumAll(...numbers: number[]): number {
+  return numbers.reduce((acc, cur) => {
+    return acc + cur;
+  }, 0);
+}
+
+console.log(sumAll(11, 22, 33));
