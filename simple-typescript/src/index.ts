@@ -21,7 +21,7 @@ console.log(mTwo(91));
 function sumAll(...numbers: number[]): number {
   return numbers.reduce((acc, cur) => {
     return acc + cur;
-  }, 0);
+  }); // Not sure why the default value was here
 }
 
 console.log(sumAll(11, 22, 33));
