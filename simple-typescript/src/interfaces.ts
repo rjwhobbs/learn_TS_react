@@ -48,8 +48,15 @@ interface Parent {
   x: string;
 }
 
-interface Child extends Parent {
+interface ParentTwo {
+  y: string;
+}
+
+interface Child extends Parent, ParentTwo {
 
 }
 
-let child: Child = {x: 'test'};
+let child: Child = {
+  x: 'test',
+  y: 'More test'
+};
