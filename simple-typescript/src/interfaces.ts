@@ -22,3 +22,14 @@ let profile: Profile = {
   name: 'John',
   age: 99
 }
+
+// Index signature to add props on the fly
+interface C {
+  [key: string]: number | string; // using union type 
+}
+
+// We can now add number props on the fly
+const c: C = {}
+c.i = 99;
+c.j = 0;
+c.str = "test" // No more error thanks to union type
