@@ -1,4 +1,9 @@
 class Robot {
+  _color: string;
+  static availableColors = ['green', 'yellow'];
+  static isColorAvai(color: string) {
+    return Robot.availableColors.includes(color);
+  }
   protected _name: string;
 
   constructor(name: string) {
@@ -14,6 +19,13 @@ class Robot {
 
   move(distance: number) {
     console.log(this.name + " moved " + distance + " meters.");
+  }
+
+  set color(color: string) {
+    if (!Robot.isColorAvai(color)) {
+      throw new Error(color + " not available");
+    }
+    this._color = color;
   }
 
   set name(value: string) { // This method is called like this var.name = 'foo';

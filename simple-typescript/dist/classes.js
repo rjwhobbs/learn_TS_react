@@ -3,6 +3,9 @@ class Robot {
     constructor(name) {
         this._name = name;
     }
+    static isColorAvai(color) {
+        return Robot.availableColors.includes(color);
+    }
     // If we have a few props to define we can do that in the constructor args
     // constructor(protected name: string) {} // This has the same effect as the above
     // Even defining this.name for us
@@ -12,6 +15,12 @@ class Robot {
     move(distance) {
         console.log(this.name + " moved " + distance + " meters.");
     }
+    set color(color) {
+        if (!Robot.isColorAvai(color)) {
+            throw new Error(color + " not available");
+        }
+        this._color = color;
+    }
     set name(value) {
         this._name = value;
     }
@@ -19,6 +28,7 @@ class Robot {
         return this._name;
     }
 }
+Robot.availableColors = ['green', 'yellow'];
 const robot = new Robot('Joe');
 robot.name = 'Mike';
 robot.askName();
