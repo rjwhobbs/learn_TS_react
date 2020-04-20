@@ -30,3 +30,6 @@ class FlyingRobot extends Robot {
       super.move(distance); // Calling parent class method
   }
 }
+
+const flyingRobot = new FlyingRobot('Tom', 42);
+flyingRobot.move(99);
