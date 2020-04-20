@@ -37,3 +37,16 @@ export const enumTest = () => {
 let col: Color = Color.Blue;
 
 //Any, anything
+
+// //Type Assertion
+// const email = document.getElementById('email'); // Hover over to get it's return
+
+// // Could be null
+// if (email) {
+//   email.addEventListener('change', e => {
+//     const input = e.currentTarget as HTMLInputElement; //Chap 8 11:00
+//     // Or
+//     // const input = <HTMLInputElement>e.currentTarget // Not available in tsx files
+//     console.log(input.value);
+//   });
+// }
