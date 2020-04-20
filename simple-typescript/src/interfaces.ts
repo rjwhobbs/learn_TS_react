@@ -12,3 +12,13 @@ let a: A = {
 }
 
 let b: B = a;
+
+interface Profile {
+  name: string;
+  age: number;
+}
+
+let profile: Profile = {
+  name: 'John',
+  age: 99
+}
