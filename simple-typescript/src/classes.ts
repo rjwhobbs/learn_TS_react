@@ -16,7 +16,7 @@ class Robot {
     console.log(this.name + " moved " + distance + " meters.");
   }
 
-  set name(value: string) {
+  set name(value: string) { // This method is called like this var.name = 'foo';
     this._name = value;
   }
 
