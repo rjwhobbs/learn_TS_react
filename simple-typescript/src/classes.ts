@@ -20,8 +20,9 @@ robot.askName();
 class FlyingRobot extends Robot {
   jetpackSize: number;
 
-  constructor(name: string) {
+  constructor(name: string, jetpackSize: number) {
     super(name); // Super refers to the constructor of the parent class
+    this.jetpackSize = jetpackSize;
   }
 
   move(distance: number) {
