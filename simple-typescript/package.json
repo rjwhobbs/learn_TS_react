@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.3",
     "typescript": "^3.8.3"
   }
 }
