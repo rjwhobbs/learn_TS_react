@@ -6,6 +6,9 @@
 // import * as math from './mul';
 //Alias
 import multiply, {mulTwo as mTwo} from './mul'; 
+import { capIt } from './types';
+
+console.log(capIt('this'));
 
 const a = 21;
 const b = 2;

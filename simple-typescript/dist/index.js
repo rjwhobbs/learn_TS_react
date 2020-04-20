@@ -8,6 +8,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // import * as math from './mul';
 //Alias
 const mul_1 = require("./mul");
+const types_1 = require("./types");
+console.log(types_1.capIt('this'));
 const a = 21;
 const b = 2;
 // console.log(math.default(a, b)); //Getting default export from namespace
