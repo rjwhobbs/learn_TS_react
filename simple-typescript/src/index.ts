@@ -1,8 +1,6 @@
-function mul(a: number, b: number): number {
-  return a * b;
-}
+import multiply,  {mulTwo} from './mul';
 
 const a = 21;
 const b = 2;
 
-console.log(mul(a, b));
+console.log(multiply(a, b));
