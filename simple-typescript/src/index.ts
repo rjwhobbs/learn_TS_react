@@ -11,8 +11,8 @@ interface KettleConstructor {
 
 class TeaKettle implements Kettle {
   volume: number;
-  constructor(volume: number) {
-    this.volume = volume;
+  constructor(x: number) {
+    this.volume = x;
   }
 }
 
@@ -23,6 +23,7 @@ class ElecKettle implements Kettle {
   }
 }
 
+// A flexible way of creating objects, as long as the constructors match
 function kettleFact(KettleClass: KettleConstructor) {
   const kettle = new KettleClass(21);
   // Code
