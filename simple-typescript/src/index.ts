@@ -38,8 +38,8 @@ interface ChocCake extends Expirable {}
 
 interface VanillaCake extends Expirable {}
 
-// So we can make interfaces for arrays aswell?
 const chocoCakes: ChocCake[] = [
+  {expiryDate: new Date()},
   {expiryDate: new Date()}
 ];
 
@@ -49,7 +49,6 @@ const vanillaCakes: VanillaCake[] = [
 
 // Making use of generic types to make our func typesafe
 // Although it might not seem like it this makes the function flexible as long as the item has the expiarydate prop.
-
 interface GetExpireItemsFunc {
   <Item extends Expirable>(items: Array<Item>): Array<Item>; 
 }
@@ -60,6 +59,7 @@ const getExpiredItems: GetExpireItemsFunc = (items) => {
   console.log(currentDate);
   return items.filter(item => item.expiryDate.getDate() < currentDate);
 }
+// Optional
 // const getExpiredItems = <Item extends Expirable>(items: Array<Item>) => {
 //   const currentDate = new Date().getTime();
 //   console.log(currentDate);

@@ -15,8 +15,8 @@ class GenClass {
         return this.props;
     }
 }
-// So we can make interfaces for arrays aswell?
 const chocoCakes = [
+    { expiryDate: new Date() },
     { expiryDate: new Date() }
 ];
 const vanillaCakes = [
@@ -28,6 +28,7 @@ const getExpiredItems = (items) => {
     console.log(currentDate);
     return items.filter(item => item.expiryDate.getDate() < currentDate);
 };
+// Optional
 // const getExpiredItems = <Item extends Expirable>(items: Array<Item>) => {
 //   const currentDate = new Date().getTime();
 //   console.log(currentDate);
