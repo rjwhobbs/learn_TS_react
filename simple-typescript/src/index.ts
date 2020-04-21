@@ -1,34 +1,27 @@
-// We can only use interfaces to make public properties of the instance side of a class
-interface Kettle {
-  volume: number;
-  //new (volume: number): Kettle; // Here we discribe the constructor and ofcourse it's return type. So the reason this won't work is because the constructure
-}                               // is on the static side of the interface
-
-// Making the constructor from an interface
-interface KettleConstructor {
-  new (volume: number): Kettle;
+// Generics
+// Generic functions
+function genericFunc<T>(x: T): T {
+  return x;
 }
 
-class TeaKettle implements Kettle {
-  volume: number;
-  constructor(x: number) {
-    this.volume = x;
+const genArrowFunc = <T>(x: T): T => x;
+
+//generic interface
+interface GenInterface<T> {
+  (a: T): T;
+  x: T;
+}
+
+interface GenIntTwo<T>{
+  <U>(a: U): U; // Gen types with call signature
+  x: T;
+}
+
+// We can use gen type params only on instance side of class
+class GenClass<P>{
+  constructor(public props: P) {}
+
+  getProps(): P {
+    return this.props;
   }
 }
-
-class ElecKettle implements Kettle {
-  volume: number;
-  constructor(volume: number) {
-    this.volume = volume;
-  }
-}
-
-// A flexible way of creating objects, as long as the constructors match
-function kettleFact(KettleClass: KettleConstructor) {
-  const kettle = new KettleClass(21);
-  // Code
-  return kettle;
-}
-
-const teaKettle = kettleFact(TeaKettle);
-console.log(teaKettle.volume);

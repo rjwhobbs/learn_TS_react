@@ -1,19 +1,16 @@
 "use strict";
-class TeaKettle {
-    constructor(x) {
-        this.volume = x;
+// Generics
+// Generic functions
+function genericFunc(x) {
+    return x;
+}
+const genArrowFunc = (x) => x;
+// We can use gen type params only on instance side of class
+class GenClass {
+    constructor(props) {
+        this.props = props;
+    }
+    getProps() {
+        return this.props;
     }
 }
-class ElecKettle {
-    constructor(volume) {
-        this.volume = volume;
-    }
-}
-// A flexible way of creating objects, as long as the constructors match
-function kettleFact(KettleClass) {
-    const kettle = new KettleClass(21);
-    // Code
-    return kettle;
-}
-const teaKettle = kettleFact(TeaKettle);
-console.log(teaKettle.volume);
