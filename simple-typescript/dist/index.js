@@ -22,13 +22,17 @@ const chocoCakes = [
 const vanillaCakes = [
     { expiryDate: new Date() }
 ];
-// Making use of generic types to make our func typesafe
-// Although it might not seem like it this makes the function flexible as long as the item has the expiarydate prop.
+// Here TS infers the implementation for us with the get func interface
 const getExpiredItems = (items) => {
     const currentDate = new Date().getTime();
     console.log(currentDate);
     return items.filter(item => item.expiryDate.getDate() < currentDate);
 };
+// const getExpiredItems = <Item extends Expirable>(items: Array<Item>) => {
+//   const currentDate = new Date().getTime();
+//   console.log(currentDate);
+//   return items.filter(item => item.expiryDate.getDate() < currentDate);
+// }
 console.log(vanillaCakes[0].expiryDate.getDate());
 console.log(chocoCakes[0].expiryDate.getTime());
 // This works because chocoCakes has the same shape as <Items extends Expirable>
