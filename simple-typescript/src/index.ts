@@ -109,3 +109,13 @@ const cart: ShoppingCart<number, Item> = {
     return this.items.find(item => item.id === id);
   }
 }
+
+// So generic are just that generic
+function find<T>(arr: T[]) {
+  let i: number = 0;
+  while (i < arr.length) {
+    console.log(arr[i++]);
+  }
+}
+
+find([1,2,3,4,5, "What"]);
