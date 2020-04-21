@@ -1,2 +1,2 @@
 "use strict";
-console.log("Test");
+console.log(100 * 0.1);
