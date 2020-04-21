@@ -41,5 +41,12 @@ console.log(getExpiredItems(chocoCakes));
 console.log(getExpiredItems(vanillaCakes));
 const a = [{ x: 7 }];
 console.log(a[0].x);
-// Here we have an error, there is no implementation actually happening
-//class TestThree implements TestOne {}
+const cart = {
+    items: [],
+    addItem(item) {
+        this.items.push(item);
+    },
+    getItemById(id) {
+        return this.items.find(item => item.id === id);
+    }
+};

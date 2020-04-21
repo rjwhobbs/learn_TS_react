@@ -85,3 +85,27 @@ console.log(a[0].x);
 
 // Here we have an error, there is no implementation actually happening
 //class TestThree implements TestOne {}
+
+interface ShoppingCart<ItemId, Item> {
+  items: Array<Item>;
+  addItem(this: ShoppingCart<ItemId, Item>, item: Item): void; // TS can't infer 'this'
+  getItemById(this: ShoppingCart<ItemId, Item>, id: ItemId): Item | undefined; 
+  // ^ The find method in the literal below returns undefined if no match is found
+  // Hence in our definition we had to specify that this method can either return a type
+  // of item or undefined
+}
+
+interface Item {
+  id: number;
+  price: number;
+}
+
+const cart: ShoppingCart<number, Item> = {
+  items: [],
+  addItem(item) {
+    this.items.push(item);
+  },
+  getItemById(id) {
+    return this.items.find(item => item.id === id);
+  }
+}
