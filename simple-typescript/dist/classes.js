@@ -35,9 +35,10 @@ class Robot {
 Robot.availableColors = ['green', 'yellow'];
 const robot = new Robot('Joe', 'green');
 robot.name = 'Mike';
+console.log(robot.color);
 robot.askName();
-robot.color = 'black';
-console.log(robot.color); // throws error because color not available
+// robot.color = 'black'; // throws error because color not available
+console.log(robot.color);
 class FlyingRobot extends Robot {
     constructor(name, color, jetpackSize) {
         super(name, color); // Super refers to the constructor of the parent class
@@ -52,4 +53,4 @@ const flyingRobot = new FlyingRobot('Tom', 'yellow', 42);
 flyingRobot.move(99);
 flyingRobot.name = "kevin";
 flyingRobot.askName();
-// ts classes hve two sides, Static and instance
+// ts classes have two sides, Static and instance
