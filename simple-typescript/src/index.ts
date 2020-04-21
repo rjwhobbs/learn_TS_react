@@ -1,8 +1,33 @@
-import {ShoppingCart} from './lib/shoppingCart';
-import { calcTotalAmount } from "./lib/calcTotalAmount";
-import { Order } from './lib/order';
+// We can only use interfaces to make public properties of the instance side of a class
+interface Kettle {
+  volume: number;
+  //new (volume: number): Kettle; // Here we discribe the constructor and ofcourse it's return type. So the reason this won't work is because the constructure
+}                               // is on the static side of the interface
 
-const cart = new ShoppingCart(); // I can't see how the obj is returning anything here
-const order = new Order();
-console.log(calcTotalAmount(cart));
-console.log(calcTotalAmount(order));
+// Making the constructor from an interface
+interface KettleConstructor {
+  new (volume: number): Kettle;
+}
+
+class TeaKettle implements Kettle {
+  volume: number;
+  constructor(volume: number) {
+    this.volume = volume;
+  }
+}
+
+class ElecKettle implements Kettle {
+  volume: number;
+  constructor(volume: number) {
+    this.volume = volume;
+  }
+}
+
+function kettleFact(KettleClass: KettleConstructor) {
+  const kettle = new KettleClass(21);
+  // Code
+  return kettle;
+}
+
+const teaKettle = kettleFact(TeaKettle);
+console.log(teaKettle.volume);
