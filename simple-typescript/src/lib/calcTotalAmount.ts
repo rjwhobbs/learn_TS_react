@@ -1,3 +1,4 @@
+// We can use interfaces to track changes in the way our modules are cupled together
 export interface InterfaceOrder {
   calcTotal(): number;
 }
