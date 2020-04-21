@@ -48,6 +48,7 @@ const vanillaCakes: VanillaCake[] = [
 ];
 
 // Making use of generic types to make our func typesafe
+// Although it might not seem like it this makes the function flexible as long as the item has the expiarydate prop.
 const getExpiredItems = <Item extends Expirable>(items: Array<Item>) => {
   const currentDate = new Date().getTime();
   console.log(currentDate);
@@ -56,7 +57,10 @@ const getExpiredItems = <Item extends Expirable>(items: Array<Item>) => {
 
 console.log(vanillaCakes[0].expiryDate.getDate()); 
 console.log(chocoCakes[0].expiryDate.getTime()); 
+// This works because chocoCakes has the same shape as <Items extends Expirable>
 console.log(getExpiredItems(chocoCakes));
+// Being explict, this function must only take VanillaCake type/shape
+console.log(getExpiredItems<VanillaCake>(vanillaCakes));
 
 // A small test of the code above
 interface TestOne {
