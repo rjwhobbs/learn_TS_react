@@ -20,3 +20,22 @@ function callPet(pet) {
         pet.meow();
     }
 }
+// Type gaurd with classes
+class Foo {
+    constructor() {
+        this.foo = 42;
+    }
+}
+class Bar {
+    constructor() {
+        this.bar = 21;
+    }
+}
+function doATHing(obj) {
+    if (obj instanceof Bar) {
+        obj.bar;
+    }
+    else {
+        obj.foo;
+    }
+}

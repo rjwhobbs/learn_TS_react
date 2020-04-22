@@ -30,3 +30,20 @@ function callPet(pet: Dog | Cat) {
     pet.meow();
   }
 }
+
+// Type gaurd with classes
+class Foo {
+  foo: number = 42;
+}
+
+class Bar {
+  bar: number = 21;
+}
+
+function doATHing(obj: Bar | Foo) {
+  if (obj instanceof Bar) {
+    obj.bar;
+  } else {
+    obj.foo;
+  }
+}
