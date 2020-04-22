@@ -1,4 +1,4 @@
-// Unions with type cards
+// Unions with type gaurds
 function func(arg: string | number | boolean) {
   if (typeof arg === 'string') {
     //code

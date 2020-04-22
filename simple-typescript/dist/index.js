@@ -1,5 +1,5 @@
 "use strict";
-// Unions with type cards
+// Unions with type gaurds
 function func(arg) {
     if (typeof arg === 'string') {
         //code
