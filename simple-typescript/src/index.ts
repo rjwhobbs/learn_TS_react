@@ -23,6 +23,7 @@ function isDog(pet: Dog | Cat): pet is Dog  {
   return (<Dog>pet).bark !== undefined //Making an assertion on the object
 }
 
+//Using 'as' to check if method is defined
 function isDogTwo(pet: Dog | Cat): pet is Dog  {
   return (pet as Dog).bark !== undefined //Making an assertion on the object
 }

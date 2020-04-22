@@ -12,6 +12,7 @@ function isDog(pet) {
     console.log('here');
     return pet.bark !== undefined; //Making an assertion on the object
 }
+//Using 'as' to check if method is defined
 function isDogTwo(pet) {
     return pet.bark !== undefined; //Making an assertion on the object
 }
