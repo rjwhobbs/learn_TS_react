@@ -20,7 +20,7 @@ dd.a = 99;
 console.log(cc); // Sp object spread doesn't make a deep copy
 // Function to combine objects
 // So ts is able to make res the correct type shape thanks to generics but we can still input primitive types in to this function
-// With extends we can make sure only objects are passed into our function
+// With extends objects we can make sure only objects are passed into our function
 function com(objA, objB) {
     return Object.assign(Object.assign({}, objA), objB);
 }
