@@ -1,71 +1,16 @@
 "use strict";
-// Unions with type gaurds
-function func(arg) {
-    if (typeof arg === 'string') {
-        //code
-    }
-    else if (typeof arg == 'number') {
-        //code
-    }
-}
-function isDog(pet) {
-    console.log('here');
-    return pet.bark !== undefined; //Making an assertion on the object
-}
-//Using 'as' to check if method is defined
-function isDogTwo(pet) {
-    return pet.bark !== undefined; //Making an assertion on the object
-}
-function callPet(pet) {
-    pet.walk();
-    if (isDogTwo(pet)) {
-        console.log("Here");
-        pet.bark();
-    }
-    else {
-        pet.meow();
-    }
-}
-let dog = {
-    walk() {
-        console.log('Walking');
-    },
-    bark() {
-        console.log('Barking');
-    }
+let aa = {
+    a: 21
 };
-let cat = {
-    walk() {
-        console.log('Walking');
-    },
-    meow() {
-        console.log('Barking');
-    }
+let bb = {
+    b: 42
 };
-console.log('XXXX' + isDog(dog));
-console.log('XXXX' + isDog(cat));
-console.log('XXXX' + isDogTwo(dog));
-console.log('XXXX' + isDogTwo(cat));
-// Type gaurd with classes
-class Foo {
-    constructor() {
-        this.foo = 42;
-    }
+// Combining mutliple types
+function x(obj) {
+    return obj.a + obj.b;
 }
-class Bar {
-    constructor() {
-        this.bar = 21;
-    }
-}
-function doATHing(obj) {
-    if (obj instanceof Bar) {
-        obj.bar;
-    }
-    else {
-        obj.foo;
-    }
-}
-// Some more type gaurds for classes
-// function simplify(value: A | B) {
-//   return value instanceof A ? value.a : value.b;
-// }
+let cc = {
+    a: 1,
+    b: 2
+};
+console.log(x(cc));
