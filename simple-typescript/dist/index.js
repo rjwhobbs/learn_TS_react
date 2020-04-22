@@ -65,3 +65,7 @@ function doATHing(obj) {
         obj.foo;
     }
 }
+// Some more type gaurds for classes
+// function simplify(value: A | B) {
+//   return value instanceof A ? value.a : value.b;
+// }
