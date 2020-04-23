@@ -1,5 +1,5 @@
 // We can't merge modules but we can augment them.
-
+// Merging is usefull for adding types to declarations in modules that we can't edit directly
 // Merging interfaces
 // Lets assume we can't edit this
 //////////
@@ -46,4 +46,41 @@ namespace MyNS {
 let thing: MyNS.IFTwo = {z: 56}
 
 console.log(MyNS.getY(), thing.z);
+
+// Merging namespaces with functions
+function test(): number {
+  return 9999;
+}
+
+namespace test { // Give it the same name as the function
+  export const something = 42;
+}
+
+console.log(test(), test.something);
+
+// Declaration merging with enums
+enum Veg {
+  Tomato = 'tomato',
+  Onion = 'onion'
+}
+
+//This is a static addition?
+namespace Veg {
+  export function makeSalad() {
+    return Veg.Tomato + Veg.Onion;
+  }
+}
+
+console.log(Veg.makeSalad());
+
+// Merging static members to classes
+class Pet {}
+
+namespace Pet {
+  export const allPets = ['cat', 'dog', 'fish'];
+}
+
+console.log(Pet.allPets);
+
+
 
