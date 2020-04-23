@@ -34,7 +34,7 @@ const map: Record<string, AA> = {
   }
 }
 
-// Pick<T, 'op' | 'op2 | etc> pick only the prop that you want
+// Pick<T, 'op' | 'op2 | etc> pick only the prop that you want from the given interface
 type test = Pick<AA, 'x'>;
 
 //Omit<T, K> opposite of pick
