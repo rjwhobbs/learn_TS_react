@@ -161,4 +161,6 @@ obj.x = 10;
 obj.y = 20;
 obj.moveBy(5, 5);
 
+console.log(obj.x);
+
 //review this from JS weird parts
