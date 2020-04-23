@@ -5,10 +5,11 @@ const thing = {
     },
     meth: {
         whatWhat() {
-            console.log(this);
+            console.log(this.x);
         }
     }
 }
 
 thing.fn();
 thing.meth.whatWhat();
+

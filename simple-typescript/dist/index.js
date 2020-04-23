@@ -78,7 +78,8 @@ console.log(myToast.sayToast());
 function makeObject(desc) {
     let data = desc.data || {};
     let methods = desc.methods || {};
-    return Object.assign(Object.assign({}, data), methods);
+    return Object.assign(Object.assign({}, data), methods); //The as keyword is a Type Assertion in TypeScript which tells the compiler to 
+    //consider the object as another type than the type the compiler infers the object to be.
 }
 let obj = makeObject({
     data: { x: 0, y: 0 },
@@ -93,4 +94,9 @@ obj.x = 10;
 obj.y = 20;
 obj.moveBy(5, 5);
 console.log(obj.x);
-//review this from JS weird parts
+// reviewing spread with as
+function comb(objA, objB) {
+    return Object.assign(Object.assign({}, objA), objB);
+}
+const m = comb({ i: 1, j: 2 }, { str: "Yo" });
+console.log(m);

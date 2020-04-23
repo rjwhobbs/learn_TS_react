@@ -144,7 +144,8 @@ type ObjectDescriptor<D, M> = {
 function makeObject<D, M>(desc: ObjectDescriptor<D, M>): D & M {
   let data: object = desc.data || {};
   let methods: object = desc.methods || {};
-  return { ...data, ...methods } as D & M;
+  return { ...data, ...methods } as D & M; //The as keyword is a Type Assertion in TypeScript which tells the compiler to 
+                                          //consider the object as another type than the type the compiler infers the object to be.
 }
 
 let obj = makeObject({
@@ -159,8 +160,23 @@ let obj = makeObject({
 
 obj.x = 10;
 obj.y = 20;
-obj.moveBy(5, 5);
+obj.moveBy(5, 5); 
 
 console.log(obj.x);
 
-//review this from JS weird parts
+interface CC {
+  i: number;
+  j: number;
+}
+
+interface MM {
+  str: string
+}
+
+// reviewing spread with as
+function comb<CC, MM>(objA: CC, objB: MM): CC & MM {
+  return {...objA, ...objB} as CC & MM;
+}
+
+const m = comb({i: 1, j: 2}, {str: "Yo" });
+console.log(m);
