@@ -34,7 +34,13 @@ const map: Record<string, AA> = {
   }
 }
 
-// Pick<T, 'op' | 'op2> pick only the prop that you want
-let test: Pick<AA, 'x'> = {x: 1};
+// Pick<T, 'op' | 'op2 | etc> pick only the prop that you want
+type test = Pick<AA, 'x'>;
 
 //Omit<T, K> opposite of pick
+
+//Exculde<T, U> applies to unions
+
+type Nums = 1 | 2 | 3 | 4 | 5 | 6 ;
+type Even = 2 | 4 | 6;
+type Odd = Exclude<Nums, Even>;
