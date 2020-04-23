@@ -20,3 +20,6 @@ const map = {
         y: 4
     }
 };
+// Pick<T, 'op' | 'op2> pick only the prop that you want
+let test = { x: 1 };
+//Omit<T, K> opposite of pick

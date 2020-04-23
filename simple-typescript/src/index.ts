@@ -34,3 +34,7 @@ const map: Record<string, AA> = {
   }
 }
 
+// Pick<T, 'op' | 'op2> pick only the prop that you want
+let test: Pick<AA, 'x'> = {x: 1};
+
+//Omit<T, K> opposite of pick
