@@ -1,2 +1,1 @@
-"use strict";
 // Utility types
