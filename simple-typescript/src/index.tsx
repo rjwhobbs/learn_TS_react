@@ -1,7 +1,9 @@
 // Augmenting a module
+// Chap 19
 import * as React from 'react';
 import {renderToString} from 'react-dom/server';
 
+// We can't add custom exports to the module
 declare module 'react' {
   interface Component {
     howzit(): string;

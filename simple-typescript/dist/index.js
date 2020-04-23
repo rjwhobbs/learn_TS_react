@@ -8,6 +8,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // Augmenting a module
+// Chap 19
 const React = __importStar(require("react"));
 const server_1 = require("react-dom/server");
 // We can augment Component because react exports it
