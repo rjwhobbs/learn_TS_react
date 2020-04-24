@@ -1,6 +1,5 @@
 "use strict";
-// Conditional Types
-// what is ts differing?
+Object.defineProperty(exports, "__esModule", { value: true });
 function someFn(val) {
     const someOtherFn = function (someArg) {
         const a = someArg;
@@ -12,3 +11,8 @@ function someFn(val) {
 const result = someFn("x");
 console.log(result);
 result("Type B");
+const EEE = {
+    someAProp: 1,
+    someBprop: 'b'
+};
+console.log(EEE);

@@ -1,3 +1,5 @@
+import { any } from "prop-types";
+
 // Conditional Types
 // what is ts differing?
 
@@ -31,3 +33,15 @@ type ResType = Exclude<'a' | 'b' | 'c', 'a' | 'b' > // conditional type are dist
 type MyTest<T> = [string | number] extends [string | number] ? T : never; // Wrapping with tuple, the result is never, non distributive, checked as is
 type MyRes = MyTest<string | number | boolean>;
 
+// Infering with conditional types
+type AAA<T> = T extends {a: infer AX; b: number } ? AX : any;
+type BBB = AAA<{a: 'MA BRU'; b: 1}>; // type BBB = 'MA BRU'.
+type CCC<T> = T extends {a: infer AX; b: infer BX } ? AX & BX: any;
+type DDD = CCC<{a: {someAProp: 1}; b: {someBprop: 'b'}}>; // intersection, = 'MY BRU' and 1
+
+const EEE: DDD = {
+  someAProp: 1, // Can only be these values
+  someBprop: 'b'
+}
+
+console.log(EEE);
