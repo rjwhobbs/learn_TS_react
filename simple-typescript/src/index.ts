@@ -78,4 +78,30 @@ str = unknownValue; // you'll get a TS error.
     function saveUser(user: User) {}
      
     saveUser(<User>{ helloWorld: '' }); // Error, this object doesn't have the required properties of the User interface.
+
+    A workaround for asserting a value to be of type which doesn't overlap with the value's actual type 
+    is to assert that the value is unknown first: saveUser(<User>(<unknown>{ helloWorld: '' })). 
+    But, do your best to avoid this workaround, because it simply makes your code unsafe.
 */
+
+// Overall, try to avoid assertions as much as possible, use them only when they are necessary, like the user-defined type guards:
+
+interface Cat {
+  meow(): void;
+}
+ 
+interface Dog {
+  bark(): void;
+}
+ 
+function isCat(pet: Cat | Dog): pet is Cat {
+  return (<Cat>pet).meow !== undefined;
+}
+ 
+function greet(pet: Cat | Dog) {
+  if (isCat(pet)) {
+    pet.meow();
+  } else {
+    pet.bark();
+  }
+}
