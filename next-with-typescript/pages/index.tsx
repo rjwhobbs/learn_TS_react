@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface Task {
   title: string
 }
@@ -6,7 +8,7 @@ interface TaskListProps {
   tasks: Task[]
 }
 
-const TaskList = ({tasks}: TaskListProps) => {
+const TaskList: React.FunctionComponent<TaskListProps> = ({tasks}) => {
   return (
     <ul>
       {tasks.map((task, i) => {
