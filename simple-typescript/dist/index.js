@@ -1,18 +1,17 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-function someFn(val) {
-    const someOtherFn = function (someArg) {
-        const a = someArg;
-        console.log("a =", a);
-        return {};
-    };
-    return someOtherFn;
-}
-const result = someFn("x");
-console.log(result);
-result("Type B");
-const EEE = {
-    someAProp: 1,
-    someBprop: 'b'
+let user = {
+    name: 'John',
+    email: 'john@example.com'
 };
-console.log(EEE);
+/*
+type User = {
+  name: string;
+  email: string;
+}
+*/
+const add = function (a, b) {
+    return a + b;
+};
+/*
+type AddType = (a: number, b: number) => number
+*/ 
