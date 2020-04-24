@@ -12,5 +12,3 @@ function someFn(val) {
 const result = someFn("x");
 console.log(result);
 result("Type B");
-// result("xx"); // Error only takes 'Type B'
-// Distributive property of a conditional type

@@ -20,3 +20,14 @@ result("Type B");
 // result("xx"); // Error only takes 'Type B'
 
 // Distributive property of a conditional type
+
+type StringOrNot<T> = T extends string ? string : never; // never used to filter union types
+//Filtering union types
+// type Exclude<T, U> = T extends U ? never : T; // Definition
+type ResType = Exclude<'a' | 'b' | 'c', 'a' | 'b' > // conditional type are distributive, it checks each type of the union, 'c' see is the only one that meets the condition
+
+// type MyTest<T> = T extends string | number ? T : never; // This is distributive not wrapped
+// type MyTest<T> = (() => T) extends () => string | number ? T : never; // Wrapping with the a function, the result is never, non distributive, checked as is
+type MyTest<T> = [string | number] extends [string | number] ? T : never; // Wrapping with tuple, the result is never, non distributive, checked as is
+type MyRes = MyTest<string | number | boolean>;
+
