@@ -1,26 +1,51 @@
 import React from 'react';
 
 interface Task {
-  title: string
+  title: string;
 }
 
 interface TaskListProps {
-  tasks: Task[]
+  initialTasks: Task[];
 }
 
-const TaskList: React.FunctionComponent<TaskListProps> = ({tasks}) => {
-  return (
-    <ul>
-      {tasks.map((task, i) => {
-        return <li key={i}>{task.title}</li>;
-      })}
-    </ul>
-  )
+interface TaskListState {
+  tasks: Task[];
 }
 
-const tasks = [
-  {title: 'One'},
-  {title: 'Two'}
-];
+class TaskList extends React.Component<TaskListProps, TaskListState> {
+  constructor(props: TaskListProps) {
+    super(props);
+    this.state = {
+      tasks: props.initialTasks
+    };
+  }
 
-export default () => <div><TaskList tasks={tasks}/></div>;
+  onAddNewTaskClick = () => {
+    this.setState({
+      tasks: [...this.state.tasks, { title: 'New Task' }]
+    });
+  };
+
+  render() {
+    const { tasks } = this.state;
+
+    return (
+      <>
+        <ul>
+          {tasks.map((task, i) => {
+            return <li key={i}>{task.title}</li>;
+          })}
+        </ul>
+        <button onClick={this.onAddNewTaskClick}>Add new task</button>
+      </>
+    );
+  }
+}
+
+const tasks = [{ title: 'Task One' }, { title: 'Task Two' }];
+
+export default () => (
+  <div>
+    <TaskList initialTasks={tasks} />
+  </div>
+);
