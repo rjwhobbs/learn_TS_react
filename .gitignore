@@ -1,3 +1,6 @@
 .DS_Store
 /simple-typescript/node_modules
 /node_modules
+node_modules
+.next
+/next-with-typescript/node_modules
