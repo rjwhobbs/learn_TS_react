@@ -45,3 +45,7 @@ const EEE: DDD = {
 }
 
 console.log(EEE);
+
+// A Real example 20:00 chap 21
+// type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any;
+type MyRetType = ReturnType<() => true> // infering the return
